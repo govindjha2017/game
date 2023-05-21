@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        #red{
+            background-color: red;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #blue{
+            background-color: blue;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            float: right;
+            top: 0;
+            right: 0;
+        }
+        #redButton{
+            margin-top: 80vh;
+            float: left;
+        }
+        #blueButton{
+            margin-top: 80vh;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <div id="red">
+        
+    </div>
+    <div id="blue">
+
+    </div>
+    <div id="redButton">
+        <input type="button" value="up" name="up" onclick="redUpfunction()">
+        <input type="button" value="down" name="down" onclick="redDownfunction()">
+        <input type="button" value="left" name="left" onclick="redleftfunction()">
+        <input type="button" value="right" name="right" onclick="redRightfunction()">
+    </div>
+    <div id="blueButton">
+        <input type="button" value="up" name="up" onclick="blueUpfunction()">
+        <input type="button" value="down" name="down" onclick="blueDownfunction()">
+        <input type="button" value="left" name="left" onclick="blueLeftfunction()">
+        <input type="button" value="right" name="right" onclick="blueRightfunction()">
+    </div>
+
+    <script>
+       function redDownfunction(){
+            //alert(' in down');
+            const elem = document.getElementById("red");
+            console.log('elem style ', elem.style);
+            console.log('elem style top ', elem.style.top);
+            elem.style.top = elem.style.top + '5px';
+            if(elem.style.top.endsWith('px')){
+                const topGap = parseInt(elem.style.top.substr(0, elem.style.top.length - 2));
+                const finalGap = topGap+5;
+                elem.style.top = finalGap + 'px';
+                console.log('topGap ', topGap);
+            }
+            console.log('elem style top ', elem.style.top);
+        }
+        function redUpfunction(){
+            const elem = document.getElementById("red");
+            elem.style.top = elem.style.top - '5px';
+            if(elem.style.top.endsWith('px')){
+                const topGap = parseInt(elem.style.top.substr(0, elem.style.top.length - 2));
+                const finalGap = topGap-5;
+                elem.style.top = finalGap + 'px';
+                console.log('topGap ', topGap);
+            }
+        }
+        function redRightfunction(){
+            const elem = document.getElementById("red");
+            elem.style.left = elem.style.left + '5px';
+            if(elem.style.left.endsWith('px')){
+                const leftGap = parseInt(elem.style.left.substr(0, elem.style.left.length - 2));
+                const finalGap = leftGap+5;
+                elem.style.left = finalGap + 'px';
+                console.log('topGap ', leftGap);
+            }
+            console.log('elem style top ', elem.style.left);
+        }
+        function redleftfunction(){
+            const elem = document.getElementById("red");
+            elem.style.left = elem.style.left - '5px';
+            if(elem.style.left.endsWith('px')){
+                const leftGap = parseInt(elem.style.left.substr(0, elem.style.left.length - 2));
+                const finalGap = leftGap-5;
+                elem.style.left = finalGap + 'px';
+            }
+        }
+        function blueDownfunction(){ 
+            const elem = document.getElementById("blue");
+            elem.style.top = elem.style.top + '5px';
+            if(elem.style.top.endsWith('px')){
+                const topGap = parseInt(elem.style.top.substr(0, elem.style.top.length - 2));
+                const finalGap = topGap+5;
+                elem.style.top = finalGap + 'px';
+                console.log('topGap ', topGap);
+            }
+            console.log('elem style top ', elem.style.top);
+        }
+        function blueUpfunction(){
+            const elem = document.getElementById("blue");
+            elem.style.top = elem.style.top - '5px';
+            if(elem.style.top.endsWith('px')){
+                const topGap = parseInt(elem.style.top.substr(0, elem.style.top.length - 2));
+                const finalGap = topGap-5;
+                elem.style.top = finalGap + 'px';
+                console.log('topGap ', topGap);
+            }
+        }
+        function blueLeftfunction(){
+            const elem = document.getElementById("blue");
+            elem.style.right = elem.style.right + '5px';
+            if(elem.style.right.endsWith('px')){
+                const rightGap = parseInt(elem.style.right.substr(0, elem.style.right.length - 2));
+                const finalGap = rightGap+5;
+                elem.style.right = finalGap + 'px';
+            }
+        }
+        function blueRightfunction(){
+            const elem = document.getElementById("blue");
+            elem.style.right = elem.style.right - '5px';
+            if(elem.style.right.endsWith('px')){
+                const rightGap = parseInt(elem.style.right.substr(0, elem.style.right.length - 2));
+                const finalGap = rightGap-5;
+                elem.style.right = finalGap + 'px';
+            }
+        }
+    </script>
+    
+</body>
+</html>
